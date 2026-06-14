@@ -101,7 +101,7 @@
                             </div>
                             <div class="combo-wrapper">
                                 <label class="input-sublabel">До</label>
-                                <input type="number" id="priceToInput" class="price-input" placeholder="∞" min="0">
+                                <input type="number" id="priceToInput" class="price-input" placeholder="999999999" min="0">
                             </div>
                         </div>
                         <div class="tooltip-trigger">i
@@ -172,7 +172,7 @@
                         </div>
 
                         <!-- Подсказка справа -->
-                        <div class="tooltip-trigger" style="margin-top: 24px;">i
+                        <div class="tooltip-trigger">i
                             <div class="tooltip-content">Выберите наличие зарегистрированных прав и ограничений в ЕГРН.</div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                 <div class="filter-group full-width">
                     <div class="flex-row-wrap">
                         <!-- Тип объекта -->
-                        <div class="combo-wrapper min-w-200">
+                        <div class="combo-wrapper">
                             <label class="input-sublabel">Тип объекта</label>
                             <div class="status-selector-box" id="objectType">
                                 <span data-value="any" class="option-pill active">все</span>
@@ -193,7 +193,7 @@
                         </div>
 
                         <!-- Статус сделки -->
-                        <div class="combo-wrapper min-w-200">
+                        <div class="combo-wrapper">
                             <label class="input-sublabel">Статус сделки</label>
                             <div class="status-selector-box" id="dealStatus">
                                 <span data-value="any" class="option-pill active">любой</span>
@@ -204,42 +204,37 @@
                         </div>
 
                         <!-- Подсказка -->
-                        <div class="tooltip-trigger" style="margin-top: 24px;">i
+                        <div class="tooltip-trigger">i
                             <div class="tooltip-content">Выберите наличие прав, ограничения, тип объекта и статус сделки.</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Форма собственности -->
-                <div class="filter-group full-width">
-                    <label class="filter-label">Форма собственности</label>
-                    <div class="input-wrapper" style="align-items: flex-start;">
-                        <div class="combo-wrapper">
-                            <div class="multiselect-container">
-                                <div class="multiselect-trigger-styled">
-                                    <span class="multiselect-placeholder" style="color: var(--text-muted);">Не выбрано</span>
-                                    <div class="multiselect-tags multiselect-tags-contents"></div>
-                                    <svg class="arrow-icon arrow-icon-absolute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="6,9 12,15 18,9"></polyline>
-                                    </svg>
-                                </div>
+                            <div class="filter-group full-width">
+                <label class="filter-label">Форма собственности</label>
+                <div class="input-wrapper">
+                    <div class="combo-wrapper">
+                        <div class="multiselect-container">
+                            <div class="multiselect-trigger-styled">
+                                <span class="multiselect-placeholder">Не выбрано</span>
+                                <div class="multiselect-tags multiselect-tags-contents"></div>
+                                <svg class="arrow-icon arrow-icon-absolute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </div>
 
                                 <div class="multiselect-window-dropdown">
                                     <label class="multiselect-item-option">
-                                        <input type="checkbox" value="private" style="flex-shrink: 0;"> Частная
-                                    </label>
+                                        <input type="checkbox" value="private">Частная</label>
                                     <label class="multiselect-item-option">
-                                        <input type="checkbox" value="federal" style="flex-shrink: 0;"> Государственная (федеральная)
-                                    </label>
+                                        <input type="checkbox" value="federal">Государственная (федеральная)</label>
                                     <label class="multiselect-item-option">
-                                        <input type="checkbox" value="regional" style="flex-shrink: 0;"> Субъект РФ
-                                    </label>
+                                        <input type="checkbox" value="regional">Субъект РФ</label>
                                     <label class="multiselect-item-option">
-                                        <input type="checkbox" value="municipal" style="flex-shrink: 0;"> Муниципальная
-                                    </label>
+                                        <input type="checkbox" value="municipal">Муниципальная</label>
                                     <label class="multiselect-item-option">
-                                        <input type="checkbox" value="other" style="flex-shrink: 0;"> Иная
-                                    </label>
+                                        <input type="checkbox" value="other">Иная</label>
                                 </div>
                             </div>
                         </div>
@@ -269,67 +264,66 @@
                 </div>
 
                 <!-- Тип ОКС (показывается только при выборе ОКС) -->
-                <div class="filter-group full-width" id="oksTypeGroup" style="display: none;">
-                    <label class="filter-label">Тип ОКС</label>
-                    <div class="input-wrapper">
-                        <div class="combo-wrapper">
-                            <input type="text" id="oksTypeInput" class="combo-input" placeholder="Выберите тип ОКС" readonly style="cursor: pointer;">
-                            <div id="oksTypeDropdown" class="combo-dropdown"></div>
-                            <svg class="arrow-icon arrow-icon-absolute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </div>
-                        <div class="tooltip-trigger">i
-                            <div class="tooltip-content">Выберите тип объекта капитального строительства.</div>
-                        </div>
-                    </div>
-                </div>
+                <div class="filter-group full-width" id="oksTypeGroup">
+    <label class="filter-label">Тип ОКС</label>
+    <div class="input-wrapper">
+        <div class="combo-wrapper">
+            <input type="text" id="oksTypeInput" class="combo-input" placeholder="Выберите тип ОКС" readonly>
+            <div id="oksTypeDropdown" class="combo-dropdown"></div>
+            <svg class="arrow-icon arrow-icon-absolute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+        </div>
+        <div class="tooltip-trigger">i
+            <div class="tooltip-content">Выберите тип объекта капитального строительства.</div>
+        </div>
+    </div>
+</div>
 
-                <!-- Назначение ОКС (показывается, если выбран тип) -->
-                <div class="filter-group full-width" id="oksPurposeGroup" style="display: none;">
-                    <label class="filter-label">Назначение ОКС</label>
-                    <div class="input-wrapper">
-                        <div class="combo-wrapper">
-                            <input type="text" id="oksPurposeInput" class="combo-input" placeholder="Сначала выберите тип" readonly style="cursor: pointer;">
-                            <div id="oksPurposeDropdown" class="combo-dropdown"></div>
-                            <svg class="arrow-icon arrow-icon-absolute" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </div>
-                        <div class="tooltip-trigger">i
-                            <div class="tooltip-content">Назначение зависит от выбранного типа ОКС.</div>
-                        </div>
-                    </div>
-                </div>
+                <div class="filter-group full-width" id="oksPurposeGroup">
+    <label class="filter-label">Назначение ОКС</label>
+    <div class="input-wrapper">
+        <div class="combo-wrapper">
+            <input type="text" id="oksPurposeInput" class="combo-input" placeholder="Сначала выберите тип" readonly>
+            <div id="oksPurposeDropdown" class="combo-dropdown"></div>
+            <svg class="arrow-icon arrow-icon-absolute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+        </div>
+        <div class="tooltip-trigger">i
+            <div class="tooltip-content">Назначение зависит от выбранного типа ОКС.</div>
+        </div>
+    </div>
+</div>
 
-                <!-- Категория земель (показывается только при выборе ЗУ) -->
-                <div class="filter-group full-width" id="landCategoryGroup" style="display: none;">
-                    <label class="filter-label">Категория земель</label>
-                    <div class="input-wrapper">
-                        <div class="combo-wrapper" style="position: relative;">
-                            <input type="text" id="landCategoryInput" class="combo-input" placeholder="Выберите категорию" readonly style="cursor: pointer;">
-                            <div id="landCategoryDropdown" class="combo-dropdown"></div>
-                            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; transition: transform 0.2s;">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </div>
-                        <div class="tooltip-trigger">i
-                            <div class="tooltip-content">Выберите категорию земель из списка.</div>
-                        </div>
-                    </div>
-                </div>
+               <!-- Категория земель (показывается только при выборе ЗУ) -->
+<div class="filter-group full-width" id="landCategoryGroup">
+    <label class="filter-label">Категория земель</label>
+    <div class="input-wrapper">
+        <div class="combo-wrapper">
+            <input type="text" id="landCategoryInput" class="combo-input" placeholder="Выберите категорию" readonly>
+            <div id="landCategoryDropdown" class="combo-dropdown"></div>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+        </div>
+        <div class="tooltip-trigger">i
+            <div class="tooltip-content">Выберите категорию земель из списка.</div>
+        </div>
+    </div>
+</div>
 
-                <!-- Разрешенное использование (показывается при выборе категории) -->
-                <div class="filter-group full-width" id="usageGroup" style="display: none;">
-                    <label class="filter-label">Разрешенное использование</label>
-                    <div class="input-wrapper">
-                        <div class="combo-wrapper" style="position: relative;">
-                            <input type="text" id="usageInput" class="combo-input" placeholder="Сначала выберите категорию" readonly style="cursor: pointer;">
-                            <div id="usageDropdown" class="combo-dropdown"></div>
-                            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; transition: transform 0.2s;">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </div>
+<!-- Разрешенное использование (показывается при выборе категории) -->
+<div class="filter-group full-width" id="usageGroup">
+    <label class="filter-label">Разрешенное использование</label>
+    <div class="input-wrapper">
+        <div class="combo-wrapper">
+            <input type="text" id="usageInput" class="combo-input" placeholder="Сначала выберите категорию" readonly>
+            <div id="usageDropdown" class="combo-dropdown"></div>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6,9 12,15 18,9"></polyline>
+            </svg>
+        </div>
                         <div class="tooltip-trigger">i
                             <div class="tooltip-content">Выберите разрешенный вид использования земли.</div>
                         </div>
